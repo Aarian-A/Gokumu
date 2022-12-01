@@ -19,15 +19,18 @@ userInput:
 	
 	convert:
 		lbu $t0, ($a0) #load first bit letter e.g 'A'
+		lbu $s0, ($a0)
 		#addi $a0, $a0, 1 # advance through array
 		
 	convertTwo:
 		lbu $t1, 1($a0) #load second bit number e.g '1'
+		lbu $s1, 1($a0)
 		#addi $a0, $a0, 1
 		
 	convertThree:
 		#addi $a0, $a0, 1  #advance through array
 		lbu $t2, 2($a0) # load 3rd bit number e.g '1'
+		lbu $s2, 2($a0)
 		
 	conditonOne:
 	

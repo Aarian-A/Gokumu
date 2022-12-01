@@ -1,8 +1,9 @@
 .data
 row:		.asciiz "_"
 
-x:		.asciiz "  X "
-o:		.asciiz "  O "
+x:		.asciiz "X" #User character
+o:		.asciiz "O" #Computer character
+
 empty:		.asciiz "    "
 
 .word
@@ -36,13 +37,14 @@ main:
 	jal displayGrid 		#From board.asm
 	
 	jal userInput			#From userValidation.asm
-	
+		
 		
 	li $v0, 10
 	syscall  			#terminate program
 	
 .include "board.asm"
 .include "userValidation.asm"
+#.include "logic.asm"
 
 
 
