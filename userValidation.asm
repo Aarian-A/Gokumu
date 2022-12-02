@@ -44,13 +44,12 @@ userInput:
 		blt $t2, '1', printError		#if int < 1, print error message
 		bgt $t2, '9', printError		#if int > 9, print error message
 		
-	exit: # exits program
-		li $v0, 10
-		syscall
+	exit:
+		jr $ra  				#return to the address of the instruction
 		
 	#displays error and loops back to prompt user for their move
 	printError:
 		li $v0, 4
 		la $a0, error
 		syscall
-		j main
+		j userInput
